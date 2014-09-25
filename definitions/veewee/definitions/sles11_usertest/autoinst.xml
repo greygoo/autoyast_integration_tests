@@ -1,0 +1,277 @@
+<?xml version="1.0"?>
+<!DOCTYPE profile>
+
+<!-- http://doc.opensuse.org/projects/autoyast/configuration.html -->
+
+<profile xmlns="http://www.suse.com/1.0/yast2ns" xmlns:config="http://www.suse.com/1.0/configns">
+  <general>
+    <mode>
+      <confirm config:type="boolean">false</confirm>
+      <forceboot config:type="boolean">true</forceboot>
+      <final_reboot config:type="boolean">true</final_reboot>
+    </mode>
+  </general>
+  <report>
+    <messages>
+      <show config:type="boolean">false</show>
+      <timeout config:type="integer">10</timeout>
+      <log config:type="boolean">true</log>
+    </messages>
+    <warnings>
+      <show config:type="boolean">false</show>
+      <timeout config:type="integer">10</timeout>
+      <log config:type="boolean">true</log>
+    </warnings>
+    <errors>
+      <show config:type="boolean">false</show>
+      <timeout config:type="integer">10</timeout>
+      <log config:type="boolean">true</log>
+    </errors>
+  </report>
+
+  <keyboard>
+    <keymap>english-us</keymap>
+  </keyboard>
+  <language>
+    <language>en_US</language>
+    <languages>en_US</languages>
+  </language>
+  <timezone>
+    <hwclock>UTC</hwclock>
+    <timezone>Europe/Berlin</timezone>
+  </timezone>
+
+  <partitioning config:type="list">
+    <drive>
+      <initialize config:type="boolean">true</initialize>
+      <use>all</use>
+    </drive>
+  </partitioning>
+  <bootloader>
+    <loader_type>grub</loader_type>
+  </bootloader>
+
+  <networking>
+    <dhcp_options>
+      <dhclient_client_id/>
+      <dhclient_hostname_option>AUTO</dhclient_hostname_option>
+    </dhcp_options>
+    <dns>
+      <dhcp_hostname config:type="boolean">false</dhcp_hostname>
+      <domain>site</domain>
+      <hostname>linux-sles11-sp3-32</hostname>
+      <resolv_conf_policy>auto</resolv_conf_policy>
+      <write_hostname config:type="boolean">true</write_hostname>
+    </dns>
+    <interfaces config:type="list">
+      <interface>
+        <bootproto>dhcp</bootproto>
+        <device>eth0</device>
+        <name>82540EM Gigabit Ethernet Controller</name>
+        <startmode>auto</startmode>
+      </interface>
+    </interfaces>
+    <ipv6 config:type="boolean">false</ipv6>
+    <keep_install_network config:type="boolean">false</keep_install_network>
+    <managed config:type="boolean">false</managed>
+    <net-udev config:type="list"/>
+    <routing>
+      <ip_forward config:type="boolean">false</ip_forward>
+    </routing>
+  </networking>
+  <firewall>
+    <enable_firewall config:type="boolean">false</enable_firewall>
+    <start_firewall config:type="boolean">false</start_firewall>
+  </firewall>
+
+  <software>
+    <image/>
+    <packages config:type="list">
+      <package>kernel-default</package>
+      <package>rsync</package>
+      <package>grub</package>
+      <package>openssh</package>
+      <package>yast2-runlevel</package>
+      <package>yast2-users</package>
+      <package>yast2-network</package>
+      <package>autoyast2</package>
+      <package>less</package>
+      <package>vim</package>
+      <package>zypper</package>
+      <package>kbd</package>
+      <package>sudo</package>
+    </packages>
+    <remove-packages config:type="list">
+      <package>bash-doc</package>
+      <package>desktop-translations</package>
+      <package>gnome-icon-theme</package>
+      <package>kernel-source</package>
+      <package>kernel-debug</package>
+      <package>kernel-pae</package>
+      <package>readline-doc</package>
+      <package>shared-mime-info</package>
+      <package>shim</package>
+      <package>vim-data</package>
+      <package>coreutils-lang</package>
+      <package>yast2-fingerprint-reader</package>
+      <package>libfprint0</package>
+      <package>libMagickCore1</package>
+      <package>command-not-found</package>
+      <package>scout</package>
+      <package>ivman</package>
+      <package>python-xml</package>
+      <package>dbus-1-python</package>
+      <package>gdb</package>
+      <package>nfs-client</package>
+      <package>python</package>
+      <package>python-base</package>
+      <package>python-satsolver</package>
+      <package>python-argparse</package>
+      <package>libxml2-python</package>
+      <package>zypper-log</package>
+      <package>yast2-python-bindings</package>
+      <package>rpm-python</package>
+      <package>perl-doc</package>
+      <package>mutt</package>
+      <package>zsh</package>
+      <package>ksh</package>
+      <package>xz-lang</package>
+      <package>glibc-i18ndata</package>
+      <package>tcl</package>
+      <package>expect</package>
+      <package>yast2-squid</package>
+      <package>libicu</package>
+      <package>libboost_regex1_36_0</package>
+      <package>crash</package>
+      <package>crash-sial</package>
+      <package>suse-sam</package>
+      <package>suse-sam-data</package>
+      <package>xfsprogs</package>
+      <package>brocade-firmware</package>
+      <package>ipw-firmware</package>
+      <package>suspend</package>
+      <package>splashy</package>
+      <package>DirectFB</package>
+      <package>xorg-x11-libXext</package>
+      <package>xorg-x11-libX11</package>
+      <package>xorg-x11-libXt</package>
+      <package>xorg-x11-libXau</package>
+      <package>xorg-x11-libSM</package>
+      <package>libsnmp15</package>
+      <package>OpenIPMI</package>
+      <package>ipmitool</package>
+      <package>yast2-printer</package>
+      <package>yast2-dns-server</package>
+      <package>yast2-dhcp-server</package>
+      <package>yast2-dhcp-server</package>
+      <package>yast2-profile-manager</package>
+      <package>yast2-ldap-server</package>
+      <package>yast2-ca-management</package>
+      <package>yast2-backup</package>
+      <package>yast2-update</package>
+      <package>scpm</package>
+      <package>puppet</package>
+      <package>gettext-runtime</package>
+      <package>cups-libs</package>
+      <package>cups-client</package>
+      <package>yast2-power-management</package>
+      <package>adaptec-firmware</package>
+      <package>mpt-firmware</package>
+      <package>limal-nfs-server</package>
+      <package>limal-nfs-server-perl</package>
+      <package>limal-ca-mgm</package>
+      <package>limal-ca-mgm-perl</package>
+      <package>yast2-nfs-common</package>
+      <package>yast2-nfs-server</package>
+      <package>yast2-nfs-client</package>
+      <package>yast2-registration</package>
+      <package>yast2-tune</package>
+      <package>yast2-repair</package>
+      <package>yast2-kdump</package>
+      <package>yast2-wagon</package>
+      <package>yast2-restore</package>
+      <package>opensc</package>
+      <package>libopensc2</package>
+      <package>genisoimage</package>
+      <package>autofs</package>
+      <package>w3m</package>
+      <package>sg3_utils</package>
+      <package>reiserfs</package>
+      <package>snmp-mibs</package>
+      <package>libtalloc2</package>
+      <package>cifs-utils</package>
+      <package>yast2-branding-SLES</package>
+      <package>yast2-theme-SLE</package>
+      <package>terminfo</package>
+      <package>joe</package>
+      <package>wodim</package>
+      <package>star</package>
+      <package>yast2-registration-branding-SLE</package>
+      <package>gfxboot-branding-SLES</package>
+      <package>PolicyKit-doc</package>
+      <package>audit</package>
+      <package>freetype2</package>
+      <package>bootsplash</package>
+      <package>bootsplash-branding-SLES</package>
+    </remove-packages>
+  </software>
+
+  <runlevel>
+    <default>3</default>
+    <services config:type="list">
+      <service>
+        <service_name>sshd</service_name>
+        <service_start>3 5</service_start>
+      </service>
+    </services>
+  </runlevel>
+
+  <groups config:type="list">
+    <group>
+      <gid>1000</gid>
+      <group_password>x</group_password>
+      <groupname>users</groupname>
+      <userlist/>
+    </group>
+  </groups>
+
+  <login_settings/>
+  <user_defaults>
+    <expire/>
+    <group>1000</group>
+    <groups/>
+    <home>/home</home>
+    <inactive>-1</inactive>
+    <no_groups config:type="boolean">true</no_groups>
+    <shell>/bin/bash</shell>
+    <skel>/etc/skel</skel>
+    <umask>022</umask>
+  </user_defaults>
+
+  <users config:type="list">
+    <user>
+      <username>vagrant</username>
+      <user_password>vagrant</user_password>
+      <encrypted config:type="boolean">false</encrypted>
+      <uid>1000</uid>
+      <gid>1000</gid>
+      <home>/home/vagrant</home>
+      <shell>/bin/bash</shell>
+    </user>
+    <user>
+      <username>root</username>
+      <user_password>vagrant</user_password>
+      <encrypted config:type="boolean">false</encrypted>
+      <shell>/bin/bash</shell>
+    </user>
+    <user>
+      <username>testuser</username>
+      <user_password>vagrant</user_password>
+      <encrypted config:type="boolean">false</encrypted>
+      <uid>5000</uid>
+      <gid>5000</gid>
+      <home>/home/vagrant</home>
+      <shell>/bin/bash</shell>
+    </user>
+  </users>
+</profile>
